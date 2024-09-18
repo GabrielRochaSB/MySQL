@@ -1,0 +1,33 @@
+-- dropar o database
+create database Clientes;
+use Clientes;
+Drop database Clientes;
+
+-- criar um 
+Create database Base_Clientes;
+use base_clientes;
+
+-- criando a tabela com os parametros
+Create Table clientes (
+id INT Primary Key AUTO_INCREMENT,
+NOME varchar(30) not null,
+Email varchar(50) Unique Not Null,
+Telefone varchar(15),
+data_cadastrado datetime DEFAULT current_timestamp
+);
+
+-- inserção de dados
+INSERT INTO clientes (NOME, Email, Telefone)
+values
+('Pedro Pedra', 'pedro.pedra@gmail.com', '11912345678'),
+('Maria Santos','maria.santos@gmail.com', '11955555555'),
+('Matheus Paulo','matheus.paulo@gmail.com','1199999999');
+
+-- consultar
+select * from clientes;
+
+
+-- atualizar dados dos clientes (PROCURANDO PELO ID)
+UPDATE clientes
+SET telefone = '1192345678'
+Where id=1;
